@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/withe"
+    android:layout_height="match_parent"
+    tools:context=".Sabiasque">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        android:layout_alignParentLeft="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tituloSabiasque"
+                    android:layout_width="match_parent"
+                    android:textSize="23sp"
+                    android:layout_height="wrap_content"
+                    android:text="¿ QUÉ ES EL VIOLENTÓMETRO?"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageviolentometro"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/log" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textqueEs"
+                    android:lineSpacingExtra="3dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/letra3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="
+Se trata de un instrumento que permite advertir sobre el grado de violencia del cual puede ser víctima.\n
+
+Se divide en 3 niveles diferenciados por colores de acuerdo con lo que los especialistas nombraron como “la escala de violencia”.\n
+
+Los siguientes son niveles de violencia posibles:\n" />
+                <TextView
+                    android:id="@+id/textqueEs1"
+                    android:lineSpacingExtra="3dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/letra1"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nivel 1. ¡Ten cuidado! La violencia aumentará.\n
+Nivel 2. ¡Reacciona! No te dejes destruir.\n
+Nivel 3. ¡Necesitas ayuda profesional!\n" />
+                <TextView
+                    android:id="@+id/textqueEs2"
+                    android:lineSpacingExtra="3dp"
+                    android:fontFamily="@font/letra3"
+                    android:textSize="18sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="las manifestaciones de violencia mostradas en el violentómetro NO son necesariamente consecutivas sino que se pueden experimentar de forma intercalada.\n
+
+De hecho, muestra a partir de las manifestaciones más sutiles de violencia seguidas de las más evidentes y finalmente las manifestaciones más extremas.\n [3],[4]" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingBottom="20dp"
+                android:gravity="center">
+
+         <!--       <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/violimage"/>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_margin="15dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/violentopicture"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

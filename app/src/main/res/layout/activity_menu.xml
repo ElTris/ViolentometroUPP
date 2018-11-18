@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    android:orientation="vertical"
+    tools:context=".menu">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/titulo"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="VIOLENTÓMETRO"
+            android:textSize="30sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="372dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+
+
+               <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center">
+
+
+                   <!-- Linear convertido a boton TEST-->
+                   <LinearLayout
+                       android:id="@+id/preguntas"
+                       android:background="@drawable/border"
+                       android:layout_width="126dp"
+                       android:layout_height="117dp"
+                       android:orientation="vertical">
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="27dp"
+                           android:layout_gravity="center"
+                           android:gravity="center">
+                           <TextView
+                               android:fontFamily="@font/letra3"
+                               android:textAlignment="center"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="TEST"/>
+                       </LinearLayout>
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="90dp"
+                           android:orientation="vertical"
+                           android:layout_gravity="center"
+                           android:gravity="center">
+                           <ImageView
+                               android:layout_width="70dp"
+                               android:layout_height="70dp"
+                               android:src="@drawable/prueba"/>
+                       </LinearLayout>
+
+
+
+
+
+                   </LinearLayout>
+                   <!-- Linear FIN convertido a boton-->
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center">
+                <!-- Linear convertido a boton TIPS-->
+                <LinearLayout
+                    android:id="@+id/tips"
+                    android:background="@drawable/border"
+                    android:layout_width="126dp"
+                    android:layout_height="117dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="27dp"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+                        <TextView
+                            android:fontFamily="@font/letra3"
+                            android:textAlignment="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TIPS"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/tipp"/>
+                    </LinearLayout>
+
+
+
+
+
+                </LinearLayout>
+                <!-- Linear FIN convertido a boton-->
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center">
+
+                    <!-- Linear convertido a boton TEST-->
+                    <LinearLayout
+                        android:id="@+id/btnAyuda"
+                        android:background="@drawable/border"
+                        android:layout_width="126dp"
+                        android:layout_height="117dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="27dp"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+                            <TextView
+                                android:fontFamily="@font/letra3"
+                                android:textAlignment="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="AYUDA"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:src="@drawable/ayuda"/>
+                        </LinearLayout>
+
+
+
+
+
+                    </LinearLayout>
+                    <!-- Linear FIN convertido a boton-->
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center">
+
+                    <!-- Linear convertido a boton TEST-->
+                    <LinearLayout
+                        android:id="@+id/acercade"
+                        android:background="@drawable/border"
+                        android:layout_width="126dp"
+                        android:layout_height="117dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="27dp"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+                            <TextView
+                                android:fontFamily="@font/letra3"
+                                android:textAlignment="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ACERCA DE..."/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:gravity="center">
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:src="@drawable/colaboracion"/>
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+                    <!-- Linear FIN convertido a boton-->
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txtpresentation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="16sp"
+            android:layout_margin="3dp"
+            android:layout_marginBottom="79dp"
+            android:text="Algunas cosas no son siempre lo que parecen, por ello te invitamos a responder unas sencillas preguntas a que reflexiones y tomes la mejor decisión."
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

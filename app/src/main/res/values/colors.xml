@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3f1263</color>
+    <color name="colorPrimaryDark">#986ead</color>
+    <color name="colorAccent">#d8cbbb</color>
+    <color name="back">#ffffff</color>
+    <color name="withe">#ffffff</color>
+    <color name="middlewhite">#f7f0fe</color>
+    <color name="backmenu">#eae5f1</color>
+    <color name="tipsC">#4b2b67</color>
+    <color name="preguntas">#f0f3f3</color>
+    <color name="separadores">#914aca</color>
+    <color name="azul">#2e9ee4</color>
+
+    <color name="H">#6da4ff</color>
+    <color name="M">#f884ff</color>
+
+
+    <color name="cero">#FFFFF477</color>
+    <color name="uno">#efdb00</color>
+    <color name="dos">#d4914d</color>
+    <color name="tres">#fe2e2b</color>
+
+    <color name="hiper">#014db0</color>
+</resources>
