@@ -57,7 +57,7 @@ public class Dev2 extends AppCompatActivity {
         twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://twitter.com/Fernand38167614");
+                Uri uri = Uri.parse("https://twitter.com/Fernand81447802");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }

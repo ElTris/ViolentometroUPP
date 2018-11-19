@@ -99,6 +99,7 @@
                 android:textAlignment="center"
                 android:text="Ser un referente de educación superior con reconocimiento internacional por la formación académica de profesionistas con valores, emprendedores, calificados y especializados, cuyo alto desempeño en investigación e innovación impacte a los sectores productivos y de salud, contribuyendo al fortalecimiento del desarrollo sustentable del estado y del país."/>
 
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,6 +109,12 @@
                 android:text="Fecha de emisión:\n 16 de mayo del 2018"
                 android:textAlignment="viewEnd"
                 android:gravity="end" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorAccent"/>
+
 
             <TextView
                 android:layout_marginTop="20dp"

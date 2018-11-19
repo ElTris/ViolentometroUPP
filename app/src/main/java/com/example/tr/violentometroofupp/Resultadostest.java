@@ -146,8 +146,6 @@ public class Resultadostest extends AppCompatActivity {
         return res;
     }
 
-
-
     public void enviarDatos(String sex,String ed,String genero,String orientacion,String ent,String ponderacion){
         String parametros="sexo="+sex+"&edad="+ed+"&genero="+genero+"&orientacion="+orientacion+"&entidad="+ent+"&ponderacion="+ponderacion;
         HttpURLConnection conexion= null;

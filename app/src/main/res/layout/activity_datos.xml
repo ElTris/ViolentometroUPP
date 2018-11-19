@@ -46,35 +46,45 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
-            android:padding="10dp"
+
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <TextView
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
                 android:id="@+id/pregs"
                 android:textSize="20sp"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:textColor="@color/tipsC"
                 android:fontFamily="@font/letra3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryDark"/>
 
 
             <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="180dp"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <Spinner
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:id="@+id/spinner"
                     android:textAlignment="center"
                     android:spinnerMode="dropdown"
                     android:minHeight="25dp"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp">
+                    android:layout_height="wrap_content">
 
 
                 </Spinner>
@@ -82,11 +92,13 @@
 
                 <Spinner
                     android:id="@+id/genero"
+                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:textAlignment="center"
                     android:spinnerMode="dropdown"
                     android:minHeight="25dp"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp">
+                    android:layout_height="wrap_content">
 
 
                 </Spinner>
@@ -95,11 +107,13 @@
 
                  <Spinner
                     android:id="@+id/orientacion"
+                     android:layout_gravity="center"
+                     android:gravity="center"
                     android:textAlignment="center"
                     android:spinnerMode="dropdown"
                     android:minHeight="25dp"
                     android:layout_width="match_parent"
-                     android:layout_height="40dp">
+                     android:layout_height="wrap_content">
 
 
                 </Spinner>
@@ -109,201 +123,204 @@
 
 
 
-        </LinearLayout>
-
-
-        //LINEA 1
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:gravity="center">
-
+            //LINEA 1
             <LinearLayout
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:layout_gravity="center"
                 android:gravity="center">
 
-
-                //BUTTON menor 16
                 <LinearLayout
-                    android:id="@+id/btnmenor16"
-                    android:layout_width="69dp"
-                    android:layout_height="48dp"
-                    android:background="@drawable/bordesedades"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
                     android:layout_gravity="center"
                     android:gravity="center">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/letra3"
-                        android:textStyle="bold"
-                        android:textAlignment="center"
-                        android:text="menor a 16"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <LinearLayout
-                    android:id="@+id/btn17"
-                    android:layout_width="69dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bordesedades"
-                    android:layout_gravity="center"
-                    android:gravity="center">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/letra3"
-                        android:textStyle="bold"
-                        android:text="17 - 25"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
 
 
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:gravity="center">
-
-            <LinearLayout
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
-                android:layout_gravity="center"
-                android:gravity="center">
-
-                //BUTTON 26 - 35
-                <LinearLayout
-                    android:id="@+id/btn26"
-                    android:layout_width="69dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bordesedades"
-                    android:layout_gravity="center"
-                    android:gravity="center">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/letra3"
-                        android:textStyle="bold"
-                        android:text="26 - 35"/>
-                </LinearLayout>
-
-                //BUTTON MUJER
-                <LinearLayout
-                    android:id="@+id/btnmujer"
-                    android:layout_width="65dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/mujer"
-                    android:layout_gravity="center_horizontal"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_marginTop="5dp"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:background="@drawable/femenino">
-
-                    </ImageView>
+                    //BUTTON menor 16
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
+                        android:id="@+id/btnmenor16"
+                        android:layout_width="69dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bordesedades"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/letra3"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:text="menor a 16"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:id="@+id/btn17"
+                        android:layout_width="69dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordesedades"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/letra3"
+                            android:textStyle="bold"
+                            android:text="17 - 25"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    //BUTTON 26 - 35
+                    <LinearLayout
+                        android:id="@+id/btn26"
+                        android:layout_width="69dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordesedades"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/letra3"
+                            android:textStyle="bold"
+                            android:text="26 - 35"/>
+                    </LinearLayout>
+
+                    //BUTTON MUJER
+                    <LinearLayout
+                        android:id="@+id/btnmujer"
+                        android:layout_width="65dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/mujer"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_marginTop="5dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/femenino">
+
+                        </ImageView>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/letra3"
+                                android:textColor="@color/withe"
+                                android:textAlignment="center"
+                                android:text="Mujer"
+                                android:layout_marginBottom="1dp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    //BUTTON HOMBRE
+                    <LinearLayout
+                        android:id="@+id/btnhombre"
+                        android:layout_width="65dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/hombre"
+                        android:orientation="vertical"
                         android:layout_gravity="center_horizontal"
                         android:gravity="center_horizontal">
-                        <TextView
+                        <ImageView
+                            android:layout_marginTop="5dp"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/masculino">
+
+                        </ImageView>
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/letra3"
+                                android:textColor="@color/withe"
+                                android:textAlignment="center"
+                                android:text="Hombre"
+                                android:layout_marginBottom="1dp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    //BUTTON 36 >
+                    <LinearLayout
+                        android:id="@+id/mayor36"
+                        android:layout_width="65dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordesedades"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:fontFamily="@font/letra3"
-                            android:textColor="@color/withe"
+                            android:textStyle="bold"
                             android:textAlignment="center"
-                            android:text="Mujer"
-                            android:layout_marginBottom="1dp"/>
+                            android:text="mayor a 36"/>
                     </LinearLayout>
 
                 </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-
-                //BUTTON HOMBRE
-                <LinearLayout
-                    android:id="@+id/btnhombre"
-                    android:layout_width="65dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/hombre"
-                    android:orientation="vertical"
-                    android:layout_gravity="center_horizontal"
-                    android:gravity="center_horizontal">
-                    <ImageView
-                        android:layout_marginTop="5dp"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:background="@drawable/masculino">
-
-                    </ImageView>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_gravity="center_horizontal"
-                        android:gravity="center_horizontal">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/letra3"
-                            android:textColor="@color/withe"
-                            android:textAlignment="center"
-                            android:text="Hombre"
-                            android:layout_marginBottom="1dp"/>
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-                //BUTTON 36 >
-                <LinearLayout
-                    android:id="@+id/mayor36"
-                    android:layout_width="65dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bordesedades"
-                    android:layout_gravity="center"
-                    android:gravity="center">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/letra3"
-                        android:textStyle="bold"
-                        android:textAlignment="center"
-                        android:text="mayor a 36"/>
-                </LinearLayout>
-
-            </LinearLayout>
 
         </LinearLayout>
+
+
+
 
     </LinearLayout>
 

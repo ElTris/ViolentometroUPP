@@ -92,12 +92,19 @@ public class Datos extends AppCompatActivity {
         Notas=findViewById(R.id.notas);
         leyenda=findViewById(R.id.pregs);
         //LISTADOS DE SPINNERS
+
+
         estados=findViewById(R.id.spinner);
         generos=findViewById(R.id.genero);
         orientacion=findViewById(R.id.orientacion);
         slider= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
         fades=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
         AlertDialog.Builder builder;
+
+        /**
+         * SE VALIDA LA VERSION Y SDK DE ANDROID PARA LANZAR UN ALERTDIALOG DEBIDO A QUE VERSIONES MENORES
+         * A LA 5 'LOLLIPOP' NO NECESITA PERMISOS EXTRAS PARA PODER MOSTRAR MENSAJES  DE VALIDACIÓN
+         * */
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             builder = new AlertDialog.Builder(Datos.this, android.R.style.Theme_Material_Dialog_Alert);
         } else {
@@ -107,6 +114,10 @@ public class Datos extends AppCompatActivity {
                 .setMessage("¿Desea obtener más información sobre 'Violentómetro'? ")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
+                        /***
+                         * SI EN EL ALERT CLICKEAS ACEPTAR SE INICIARA UNA ACTIVIDAD
+                         * */
+
                         Intent intent=new Intent(Datos.this,Sabiasque.class);
                         startActivity(intent);
                     }
@@ -128,14 +139,24 @@ public class Datos extends AppCompatActivity {
             leyenda.setText(preg[contador]);
             btnMujer.startAnimation(fades);
             btnHombre.setAnimation(fades);
-            estados.setAdapter(new ArrayAdapter<String>(Datos.this, android.R.layout.simple_spinner_dropdown_item, Edos));
-            generos.setAdapter(new ArrayAdapter<String>(Datos.this,android.R.layout.simple_spinner_dropdown_item,geneross));
-            orientacion.setAdapter(new ArrayAdapter<String>(Datos.this,android.R.layout.simple_spinner_dropdown_item,Orienta));
+
+
+            ArrayAdapter<String> adapterestados=new ArrayAdapter(this,R.layout.adapteespinner_custom,Edos);
+            estados.setAdapter(adapterestados);
+
+
+            ArrayAdapter<String> adaptergeneros=new ArrayAdapter(this,R.layout.adapteespinner_custom,geneross);
+            generos.setAdapter(adaptergeneros);
+
+
+            ArrayAdapter<String> adapterorientacion=new ArrayAdapter(this,R.layout.adapteespinner_custom,Orienta);
+            orientacion.setAdapter(adapterorientacion);
+
             estados.setVisibility(View.GONE);
             generos.setVisibility(View.GONE);
             orientacion.setVisibility(View.GONE);
-            /*
-            * PRIMERA ELECCIÓN
+            /***
+            * PRIMERA ELECCIÓN ("SEXO SERÁ IGUAL A MUJER SÍ EL BOTÓN ES PRESIONADO")
             * */
         btnHombre.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,6 +173,11 @@ public class Datos extends AppCompatActivity {
                 Sexo="M";
             }
         });
+
+
+        /***
+         * SEGUNDA ELECCIÓN ("SEXO SERÁ IGUAL A MUJER SÍ EL BOTÓN ES PRECIONADO")
+         * */
         btnMujer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -168,8 +194,12 @@ public class Datos extends AppCompatActivity {
             }
         });
         /**
-        * FIN DE LA PRIMERA ELECCION
+        * FIN DE LA SEGUNDA ELECCION
         **/
+
+        /**
+         * SELECCION DE EDAD AL PRECIONAR BOTON "btn1Edad" DENTRO DEL "activity_datos.xml" (SI ES MENOR A 16 AÑOS DE EDAD)
+         * * */
         btn1Edad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -185,6 +215,10 @@ public class Datos extends AppCompatActivity {
                 btnsiguiente2.setVisibility(View.VISIBLE);
             }
         });
+
+        /**
+         * SELECCION DE EDAD AL PRECIONAR BOTON "btn2Edad" DENTRO DEL "activity_datos.xml" (SI SU EDAD ES DE 17 - 25 AÑOS)
+         * * */
         btn2Edad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -200,6 +234,10 @@ public class Datos extends AppCompatActivity {
                 btnsiguiente2.setVisibility(View.VISIBLE);
             }
         });
+
+        /**
+         * SELECCION DE EDAD AL PRECIONAR BOTON "btn3Edad" DENTRO DEL "activity_datos.xml" (SI SU EDAD ES DE 26 - 35 AÑOS)
+         * * */
         btn3Edad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -215,6 +253,9 @@ public class Datos extends AppCompatActivity {
                 btnsiguiente2.setVisibility(View.VISIBLE);
             }
         });
+        /**
+         * SELECCION DE EDAD AL PRECIONAR BOTON "btn4Edad" DENTRO DEL "activity_datos.xml" (SI SU EDAD ES MAYOR A 36 AÑOS)
+         * * */
         btn4Edad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -230,9 +271,13 @@ public class Datos extends AppCompatActivity {
                 btnsiguiente2.setVisibility(View.VISIBLE);
             }
         });
-        /*
-        *
-        * FIN DE TERCERA ELECCIÓN*/
+        /**
+        *FIN DE SELECCION DE EDAD DENTRO DEL "activity_datos.xml"
+        * */
+
+        /**
+         * SELECCIÓN DE GENERO DENTRO DEL "activity_datos.xml" CON SPINNER "generos"
+         * */
         generos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -244,7 +289,14 @@ public class Datos extends AppCompatActivity {
 
             }
         });
+        /**
+         * FIN DE SELECCIÓN DE GENERO DENTRO DEL "activity_datos.xml" CON SPINNER "generos"
+         * */
 
+
+        /**
+         * SELECCIÓN DE ORIENTACIÓN DENTRO DEL "activity_datos.xml" CON SPINNER "orientacion"
+         * */
         orientacion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -256,10 +308,15 @@ public class Datos extends AppCompatActivity {
 
             }
         });
+        /**
+         * FIN DE SELECCIÓN DE ORIENTACIÓN DENTRO DEL "activity_datos.xml" CON SPINNER "orientacion"
+         * */
 
 
+        /**
+         * SELECCIÓN DE ESTADOS DENTRO DEL "activity_datos.xml" CON SPINNER "estados"
+         * */
         estados.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long id)
             {
@@ -270,9 +327,14 @@ public class Datos extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent)
             {    }
         });
+        /**
+         * FIN DE SELECCIÓN DE ESTADOS DENTRO DEL "activity_datos.xml" CON SPINNER "estados"
+         * */
 
 
-
+        /**
+         * AL PRECIONAR ESTE BOTÓN SE CAMBIARÁ LA CADENA DE TÍTULO Y SERÁN VISIBLES ALGUNOS ELEMENTOS
+         * */
         btnsiguiente2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -287,6 +349,9 @@ public class Datos extends AppCompatActivity {
         });
 
 
+        /**
+         * AL PRECIONAR ESTE BOTÓN SE CAMBIARÁ LA CADENA DE TÍTULO Y SERÁN VISIBLES ALGUNOS ELEMENTOS
+         * */
         btnsiguiente3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -301,7 +366,10 @@ public class Datos extends AppCompatActivity {
         });
 
 
-
+        /**
+         * AL PRECIONAR ESTE BOTÓN SE ENVIARÁN LOS RESULTADOS A LA SIGUIENTE ACTIVIDAD ('Questionsask') Y POSTERIORMENTE
+         * SE INICIARÁ UNA NUEVA ACTIVITY ('Questionsask')
+         * */
         btnsiguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
