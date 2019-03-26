@@ -19,17 +19,20 @@ public class Sabiasque extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sabiasque);
-
+        /**Asignar los elementos del xml a las variables*/
         titulo=findViewById(R.id.tituloSabiasque);
         sabias=findViewById(R.id.textqueEs);
         imageViolentometro=findViewById(R.id.imageviolentometro);
-
+        /**Asignar la tipografia a la variable de tipo Typeface*/
         this.Quicksand=Typeface.createFromAsset(getAssets(),tipografica);
-
+        /**Cargar la animación a la variable fades*/
         fades= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
+
+        /** Cargar la tipografia a los textview */
         titulo.setTypeface(Quicksand);
         sabias.setTypeface(Quicksand);
 
+        /**Cargar la imagenes con animaciones*/
         imageViolentometro.startAnimation(fades);
         titulo.startAnimation(fades);
         sabias.startAnimation(fades);

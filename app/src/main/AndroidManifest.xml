@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tr.violentometroofupp">
 
+
     <supports-screens android:requiresSmallestWidthDp="480" />
+
+    <!-- AGREGAR PERMISOS A LA APLICACION PARA QUE
+    PUEDA ACCEDER A LOS SENSORES Y ESTADOS DEL DISPOSITIVO  -->
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,6 +19,7 @@
         android:roundIcon="@drawable/logosviol"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
@@ -68,6 +73,8 @@
             android:screenOrientation="portrait" />
         <activity android:name=".Referencias"
             android:screenOrientation="portrait"></activity>
+
+
     </application>
 
 </manifest>

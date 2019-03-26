@@ -24,7 +24,7 @@ public class Dev2 extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dev2);
-
+        /** Asignación de cada uno de los elementos utilizados*/
         facebook=findViewById(R.id.face);
         twitter=findViewById(R.id.twitter);
         gmail=findViewById(R.id.gmail);
@@ -32,18 +32,18 @@ public class Dev2 extends AppCompatActivity {
         nombre=findViewById(R.id.nombre);
         descripcion=findViewById(R.id.descripcion);
 
-
+        /**Asignación de las animaciones a las variables previamente declaradas*/
         boton= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
         foto=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.blink);
         textos=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.blink);
-
+        /**Iniciar las animaciones de todas las ImageView*/
         facebook.startAnimation(boton);
         twitter.startAnimation(boton);
         gmail.startAnimation(boton);
         instagram.startAnimation(boton);
         nombre.startAnimation(textos);
         descripcion.startAnimation(textos);
-
+        /**Al precionar el botón será enviado a facebook por medio de un activity*/
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,8 +52,7 @@ public class Dev2 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
+        /** Al precionar el botón será enviado a twitter por medio de un activity*/
         twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +61,7 @@ public class Dev2 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        /**Al precionar el botón será enviado a gmail por medio de un activity*/
         gmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +69,7 @@ public class Dev2 extends AppCompatActivity {
             }
         });
 
+        /**Al precionar el botón será enviado a instagram por medio de un activity*/
         instagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,7 +80,7 @@ public class Dev2 extends AppCompatActivity {
         });
 
     }
-
+    /**Método para el envio de mensajes por medio de gmail*/
     protected void sendEmail() {
         String[] TO = {"ferhis02@gmail.com"}; //aquí pon el correo
         String[] CC = {""};

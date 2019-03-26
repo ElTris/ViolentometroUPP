@@ -15,15 +15,37 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 public class Datos extends AppCompatActivity {
+
+    /** Declaración de variables que contendran valores de animaciones*/
     Animation slider,fades;
+
+    /** Declaración de Layout que serán utilizados como botones*/
     LinearLayout btn1Edad,btn2Edad,btn3Edad,btn4Edad,btnHombre,btnMujer,Notas;
+    /** Declaracion de botones*/
     Button btnsiguiente,btnsiguiente2,btnsiguiente3;
+    /** Decraración de Botones */
     TextView leyenda;
+    /**Declaración  de variables que almacenarán los valores  de 'Edad'  'Entidad' 'Sexo'*/
     String Edad="",Entidad="",Sexo="";
+    /** Declaración de variables que almacenan la
+     * Orientacion sexua del usuario = 'ORIENTACION'--> nombre de variable
+     * Genero de usuario = 'GENERO'--> nombre de variable
+     * */
     String ORIENTACION,GENERO;
+
+    /** Declaración de los elementos Spinner  estados,generos,orientacion para su posterior uso*/
     Spinner estados,generos,orientacion;
+
+    /**NOTA : Contador es una variable indispensable
+     * para el correcto funcionamiento de esta app
+     * es encargado de ír mostrando los elementos correspondientes
+     * según su valor
+     * */
     int contador=0;
+
+    /** Lista de estados que serán ingresados dentro  de un spinner*/
     String[] Edos={
             "Aguascalientes",
             "Baja California",
@@ -57,15 +79,23 @@ public class Datos extends AppCompatActivity {
             "Yucatán",
             "Zacatecas"
     };
+
+    /** Lista de generos que serán ingresados dentro de un spinner */
     String[] geneross={
             "Femenino",
             "Masculino"
     };
+
+    /**Lista de orientacion sexual que serán ingresados dentro de un spinner */
     String[] Orienta={
       "Heterosexual",
       "Homosexual",
       "Bisexual"
     };
+
+    /** Preguntas que se integrarán dentro de un textview para que el usuario
+     * llene correctamente los campos requeridos
+     * */
     String[] preg={
             "Por favor indica tu Sexo.",
             "Por favor indica tu Edad.",
@@ -77,9 +107,7 @@ public class Datos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos);
-
-
-
+        /** Asignación de los botones  y otros elementos utiles dentro del Layout*/
         btn1Edad=findViewById(R.id.btnmenor16);
         btn2Edad=findViewById(R.id.btn17);
         btn3Edad=findViewById(R.id.btn26);
@@ -91,20 +119,20 @@ public class Datos extends AppCompatActivity {
         btnsiguiente=findViewById(R.id.btnsiguiente);
         Notas=findViewById(R.id.notas);
         leyenda=findViewById(R.id.pregs);
-        //LISTADOS DE SPINNERS
-
-
         estados=findViewById(R.id.spinner);
         generos=findViewById(R.id.genero);
         orientacion=findViewById(R.id.orientacion);
+
+        /** Asignación de animaciones*/
         slider= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
         fades=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
-        AlertDialog.Builder builder;
+
 
         /**
          * SE VALIDA LA VERSION Y SDK DE ANDROID PARA LANZAR UN ALERTDIALOG DEBIDO A QUE VERSIONES MENORES
          * A LA 5 'LOLLIPOP' NO NECESITA PERMISOS EXTRAS PARA PODER MOSTRAR MENSAJES  DE VALIDACIÓN
          * */
+        AlertDialog.Builder builder;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             builder = new AlertDialog.Builder(Datos.this, android.R.style.Theme_Material_Dialog_Alert);
         } else {
@@ -128,6 +156,8 @@ public class Datos extends AppCompatActivity {
                 })
                 .setIcon(android.R.drawable.ic_dialog_info)
                 .show();
+
+
             btn1Edad.setVisibility(View.GONE);
             btn2Edad.setVisibility(View.GONE);
             btn3Edad.setVisibility(View.GONE);
@@ -139,16 +169,13 @@ public class Datos extends AppCompatActivity {
             leyenda.setText(preg[contador]);
             btnMujer.startAnimation(fades);
             btnHombre.setAnimation(fades);
-
-
+            /** Ingresar dentro del Spinner la lista de estados*/
             ArrayAdapter<String> adapterestados=new ArrayAdapter(this,R.layout.adapteespinner_custom,Edos);
             estados.setAdapter(adapterestados);
-
-
+            /**Ingresar dentro del Spinner la lista de generos*/
             ArrayAdapter<String> adaptergeneros=new ArrayAdapter(this,R.layout.adapteespinner_custom,geneross);
             generos.setAdapter(adaptergeneros);
-
-
+            /**Ingresar dentro del Spinner la lista de generos*/
             ArrayAdapter<String> adapterorientacion=new ArrayAdapter(this,R.layout.adapteespinner_custom,Orienta);
             orientacion.setAdapter(adapterorientacion);
 

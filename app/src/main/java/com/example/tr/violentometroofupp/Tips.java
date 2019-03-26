@@ -17,7 +17,7 @@ import android.widget.ViewSwitcher;
 
 public class Tips extends AppCompatActivity {
 
-    //private TextSwitcher tipsText;
+    /**private TextSwitcher tipsText;**/
     ImageView sig,reg;
     Animation move,moveleft;
     LinearLayout notaTip;
@@ -25,6 +25,7 @@ public class Tips extends AppCompatActivity {
     TextView consejos,tituloTip;
     String tipografia="fuentes/letra3.ttf";
 
+    /**Asignar cadenas de preguntas a el array QUOTES*/
     String[] QUOTES={
             "*Infórmate del tema \nAl principio puede parecerte inútil, pero te sorprenderías de la cantidad de personas que desconocen aspectos cruciales sobre la violencia familiar.\n" +
                     "\n" +
@@ -60,11 +61,14 @@ public class Tips extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tips);
+
+        /**Asignar a las variables previamente declaradas elementos pertenecientes al xml correspondiente*/
         sig=(ImageView)findViewById(R.id.btnsiguiente);
         reg=(ImageView)findViewById(R.id.btnregresar);
         consejos=(TextView)findViewById(R.id.consejosT);
         tituloTip=(TextView) findViewById(R.id.tituloTips);
 
+        /**Asignar animaciones a las variables **/
         move= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
         moveleft=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move_left);
 
@@ -78,6 +82,8 @@ public class Tips extends AppCompatActivity {
 
         reg.setVisibility(View.GONE);
 
+
+        /**Al precionar el botón sig, cambiará la pregunta, a una pregunta siguiente*/
         sig.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
@@ -97,6 +103,7 @@ public class Tips extends AppCompatActivity {
             }
         });
 
+        /**Al precionar el botón reg se regreseará la pregunta anterior*/
         reg.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override

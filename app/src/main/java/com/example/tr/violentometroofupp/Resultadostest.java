@@ -13,15 +13,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import static maes.tech.intentanim.CustomIntent.customType;
 import org.w3c.dom.Text;
 
 import java.io.DataOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Resultadostest extends AppCompatActivity {
+
+    /**Declaración de cada una de las variables con sus respectivos tipos de datos*/
     String ponderacion,sexo,edad,entidad;
     LinearLayout CARTA;
     TextView titulo,semaforo,resultados,semafo,semaforo2,semaforo3;
@@ -30,10 +34,14 @@ public class Resultadostest extends AppCompatActivity {
     ImageView ayuda;
     Animation fadein,zoom;
     String GENERO,ORIENTACION;
+
+    private static final String FILE_NAME = "SavesAnsers.txt";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultadostest);
+
+        /**Asignacion de los elementos pertenecientes al xml*/
         CARTA=findViewById(R.id.muestreo);
         titulo=findViewById(R.id.tiituloRESULTADO);
         semaforo=findViewById(R.id.semaforo1);
@@ -42,7 +50,7 @@ public class Resultadostest extends AppCompatActivity {
         resultados=findViewById(R.id.textoRES);
         semafo=findViewById(R.id.textosomaforo);
         ayuda=findViewById(R.id.imagenAyuda);
-
+        /**Asignación de la tipografía */
         this.tipografia=Typeface.createFromAsset(getAssets(),Quicksand);
         titulo.setTypeface(tipografia);
         semafo.setTypeface(tipografia);
@@ -51,7 +59,8 @@ public class Resultadostest extends AppCompatActivity {
         resultados.setTextSize(22);
         ayuda.setVisibility(View.GONE);
 
-
+        /**El Bundle recuper unformacion enviada de otras activity tomando su key 'palabra clave
+         * con la que fueron enviados los datos'*/
         Bundle recuperacion=getIntent().getExtras();
         sexo=recuperacion.getString("sex");
         edad=recuperacion.getString("eda");
@@ -59,12 +68,17 @@ public class Resultadostest extends AppCompatActivity {
         ORIENTACION=recuperacion.getString("ORIENTACION");
         entidad=recuperacion.getString("enti");
 
+        /**Asignar ñas animaciones a sus respectivas variables*/
         zoom=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoom);
         fadein= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
         semaforo.setBackgroundColor(getResources().getColor(R.color.uno));
         semaforo2.setBackgroundColor(getResources().getColor(R.color.dos));
         semaforo3.setBackgroundColor(getResources().getColor(R.color.tres));
 
+
+        /** La serie de if que se encuentran abajo son para comparar el valor tomado por las llaves
+         * y deducir el rango de violencia en que se encuentra
+         * */
         if (recibirDatos()==0){
             resultados.setText("No hay violencia, mantente así.");
             ponderacion="No hay violencia, mantente así.";
@@ -100,6 +114,13 @@ public class Resultadostest extends AppCompatActivity {
         }
 
 
+        /***
+         *
+         *
+         * NOTA IMPORTANTE : el proceso que se muestra abajo es un proceso de ejecucion en tiempo real
+         * que permite el envio de datos a un archivo de texto para evitar perdida de datos
+         *
+         * */
 
                 /*
                  * IMPLEMENTACION DEL THREAD
@@ -111,6 +132,22 @@ public class Resultadostest extends AppCompatActivity {
                         public void run() {
                             super.run();
                             enviarDatos(sexo,edad,GENERO,ORIENTACION,entidad,ponderacion);
+                            String cadenaSaving = sexo + " " + edad + " " + GENERO + " " + ORIENTACION + " " + entidad + " " + ponderacion;
+                            FileOutputStream fos = null;
+                            try {
+                                fos = openFileOutput(FILE_NAME,MODE_PRIVATE);
+                                fos.write(cadenaSaving.getBytes());
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }finally {
+                                if (fos != null){
+                                    try {
+                                        fos.close();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -139,13 +176,16 @@ public class Resultadostest extends AppCompatActivity {
 
     }
 
-
+    /**Este método sirve para recibir los datos enviados desde una activity diferente*/
     public int recibirDatos(){
         Bundle extras=getIntent().getExtras();
         int res=extras.getInt("resultados");
         return res;
     }
 
+
+
+    /**Este Método sirve para enviar datos para el servidor*/
     public void enviarDatos(String sex,String ed,String genero,String orientacion,String ent,String ponderacion){
         String parametros="sexo="+sex+"&edad="+ed+"&genero="+genero+"&orientacion="+orientacion+"&entidad="+ent+"&ponderacion="+ponderacion;
         HttpURLConnection conexion= null;

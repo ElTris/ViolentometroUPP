@@ -34,6 +34,12 @@ public class Questionsask extends AppCompatActivity {
     Typeface quicksand;
     String tipografia="fuentes/letra3.ttf";
     ImageButton aceptar,cancelar,regresarask;
+
+    /** Inicialización del arreglo que contiene las preguntas
+     * con las cuales el usuario deverá llenar su información
+     *
+     * */
+
     String[]  preguntas={
             "¿Has recibido bromas hirientes?",
             "¿Eres víctima de chantaje?",
@@ -66,25 +72,21 @@ public class Questionsask extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionsask);
-
-
-
-
+        /***Asignación de las variables para algunos elementos  del xml*/
         notass=(LinearLayout)findViewById(R.id.notas);
         aceptar=(ImageButton) findViewById(R.id.btnSI);
         cancelar=(ImageButton)findViewById(R.id.btnNO);
         regresarask=(ImageButton)findViewById(R.id.aksanterior);
         pregubtasMestra=(TextView)findViewById(R.id.nopreguntas);
         numero=(TextView) findViewById(R.id.nohoja);
-
         tituloTip=(TextView) findViewById(R.id.tituloTest);
+
+        /**Asignación de la tipografia a sus respectivas variables*/
         hoja= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
         pulsante=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.blink);
         moveLeft=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move_left);
-
         this.quicksand=Typeface.createFromAsset(getAssets(),tipografia);
         tituloTip.setTypeface(quicksand);
-
         pregubtasMestra.setTypeface(quicksand);
         pregubtasMestra.setTypeface(quicksand);
         pregubtasMestra.setTextColor(getResources().getColor(R.color.tipsC));
@@ -97,7 +99,7 @@ public class Questionsask extends AppCompatActivity {
         ORIENTACION=recuperacion.getString("orientacion");
         entidad=recuperacion.getString("entidad");
 
-
+        /**Verificar permisos para uso de internet durante el proceso de envio de datos*/
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(Questionsask.this, Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED) {
             }else{
@@ -108,6 +110,12 @@ public class Questionsask extends AppCompatActivity {
         else{
         }
         regresarask.setVisibility(View.GONE);
+
+
+
+        /**Inicio linea 118 ---> termina en linea ---> 183
+         * Validación de las preguntas contestadas
+         * */
         //---------------------------------------------------------------
         aceptar.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -152,15 +160,12 @@ public class Questionsask extends AppCompatActivity {
                         }
                         if (c1>0){
                             RESULTADO=1;
-                            //Log.d("", "ponderacion  1: "+c1);
                         }
                         if(c2>0){
                             RESULTADO=2;
-                            //Log.d("", "ponderacion  2: "+c2);
                         }
                         if (c3>0){
                             RESULTADO=3;
-                            //Log.d("", "ponderacion  3: "+c3);
                         }
                         if((c1+c2+c3)==0){
                             RESULTADO=0;
@@ -180,6 +185,7 @@ public class Questionsask extends AppCompatActivity {
         });
 
 
+        /**Al precionar el boton cancelar, el conteo de el rango incrementa para ser una puntuacion negativa.*/
 
         cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -223,15 +229,12 @@ public class Questionsask extends AppCompatActivity {
                         }
                         if (c1>0){
                             RESULTADO=1;
-                            //Log.d("", "ponderacion  1: "+c1);
                         }
                         if(c2>0){
                             RESULTADO=2;
-                            //Log.d("", "ponderacion  2: "+c2);
                         }
                         if (c3>0){
                             RESULTADO=3;
-                            //Log.d("", "ponderacion  3: "+c3);
                         }
                         if((c1+c2+c3)==0){
                             RESULTADO=0;
@@ -266,6 +269,9 @@ public class Questionsask extends AppCompatActivity {
             }
         });
     }
+
+
+    /**Este Método sobreescrito nos permite obtener los permisos que el ususario esté de acuerdo aceptar*/
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode){
@@ -275,7 +281,7 @@ public class Questionsask extends AppCompatActivity {
                     Toast.makeText(this, "Gracias, aceptaste los permisos requeridos para el correcto funcionamiento de esta aplicación.", Toast.LENGTH_SHORT).show();
                 }else{
                     // Permiso denegado.
-                    Toast.makeText(this, "No se aceptó permisos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "No aceptó permisos", Toast.LENGTH_SHORT).show();
                 }
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
